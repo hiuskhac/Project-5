@@ -25,10 +25,6 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.worker\.js$/,
-        use: [{ loader: "worker-loader" }],
-      },
-      {
         test: /\.(png|jpg|jpeg|gif)$/i,
         use: [
           {
@@ -58,10 +54,6 @@ module.exports = {
       // Automatically remove all unused webpack assets on rebuild
       cleanStaleWebpackAssets: true,
       protectWebpackAssets: false,
-    }),
-    new WorkboxPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
     }),
   ],
 };
