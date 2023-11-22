@@ -132,8 +132,8 @@
     margin-left: 20px;
 }
 .card--head img{
-    width: 250px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
 }
 
@@ -206,6 +206,13 @@ section {
     .section--one__content{
         display: block;
     }
+    #results{
+        flex-direction: column;
+    }
+    .card{
+        margin-top: 10px;
+    }
+    
 }
 
 @media (min-width:901px) {
