@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hieu's blog</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar--logo">
+            <h1><a href="index.html">Hieu's Blog</a></h1>
+        </div>
+        <ul class="navbar--list" id="index-page">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="">Blog</a></li>
+        </ul>
+    </nav>
+    <header class="banner">
+        <em class="banner--slogan">Welcome To My Blog!</em>
+        <b class="banner--wish">Have A Nice Day</b>
+    </header>
+    <section class="page--section">
+        <h2>Travel App : Weather Forecast</h2>
+        <form class="form-travelApp" onsubmit="return Client.handleSubmit(event)">
+            <label for="place"><b>Location:</b></label>
+            <input id="place" type="text" name="input" value="" placeholder="Enter name of place ...">
+            <label for="date-travel"><b>Choose Travel Date:</b></label>
+            <input id="date-travel" type="date" placeholder="Enter date...">
+            <input type="submit"  name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+            <p id="error"></p>
+            <p id="error-regex"></p>
+        </form>
+    </section>
+
+    <section class="page--section">
+        <h2>Results:</strong>
+        <div id="results"></div>
+    </section>
+    <section class="page--section section--one">
+        <h2>Some thing about me</h2>
+        <div class="section--one__content">
+            <div class="content--picture">
+                <img class="content--picture__selfie" src="../img/me.png" alt="selfie image" />
+                <figcaption>Fig.1 - My selfie</figcaption>
+            </div>
+            <div class="content--text">
+                <p><b>My name is Hieu</b> - <strong>Currently I am a front end developer working at FPT software</strong></p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
+                    esse blanditiis quibusdam aut, saepe magnam aliquam perspiciatis
+                    facere quis recusandae veniam deserunt nulla unde voluptatem
+                    distinctio totam amet labore tempore modi! Repudiandae aliquam odio
+                    aperiam ipsum atque blanditiis sit vel, excepturi id consequuntur
+                    cupiditate harum voluptatum fugit illum laudantium nisi voluptas
+                    ducimus eius commodi saepe? At, sed! Dolor dolorem veritatis, ipsum
+                    blanditiis animi doloremque! Ab sint similique libero reiciendis
+                    optio numquam in sed. Sed modi, qui beatae est repudiandae placeat
+                    suscipit sint fugit nisi ex quidem eum commodi eaque quibusdam
+                    molestiae deserunt doloribus excepturi officiis sunt accusantium,
+                    iste perspiciatis necessitatibus nam! Minima aut odio praesentium
+                    dignissimos adipisci. Consequuntur quasi error dolores nam!
+                    Dignissimos soluta reiciendis molestiae autem voluptates incidunt
+                    commodi ullam quod? Ducimus deserunt sint earum ullam quam laborum
+                    in dolorem voluptates sapiente libero enim illum eum deleniti
+                    numquam, accusamus iusto voluptatibus modi excepturi officia ratione
+                    quaerat ipsum iure quos?
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="page--section section--three">
+        <h2>Contact Me</h2>
+        <div class="logo">
+            <a class="logo--img" href="https://www.facebook.com/" target="_blank">
+                <img src="../img/facebook.PNG" alt="facebook logo" />
+            </a>
+            <a class="logo--img" href="https://www.reddit.com/" target="_blank">
+                <img src="../img/redit.png" alt="reddit logo" />
+            </a>
+            <a class="logo--img" href="https://www.instagram.com/" target="_blank">
+                <img src="../img/insta.png" alt="instagram logo" />
+            </a>
+            <a class="logo--img" href="https://twitter.com/" target="_blank">
+                <img src="../img/twitter.png" alt="twitter logo" />
+            </a>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Hieu's Blog.</p>
+        </div>
+    </footer>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+
+</html>
