@@ -17,6 +17,13 @@ app.get("/", function (req, res) {
   res.sendFile(path.resolve("src/client/views/index.html"));
 });
 
+app.use((req, res, next) => {
+  if (req.originalUrl && req.originalUrl.split("/").pop() === "favicon.ico") {
+    return res.sendStatus(204);
+  }
+  return next();
+});
+
 app.post("/geoName", getCoordinates);
 
 // designates what port the app will listen to for incoming requests
