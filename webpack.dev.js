@@ -12,6 +12,11 @@ module.exports = {
     libraryTarget: "var",
     library: "Client",
   },
+  devServer: {
+    historyApiFallback: {
+      disableDotRule: true,
+    },
+  },
   stats: "verbose",
   module: {
     rules: [
@@ -23,6 +28,12 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: "url-loader",
+        },
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
@@ -39,6 +50,10 @@ module.exports = {
         test: /\.html$/i,
         use: ["html-loader"],
       },
+      {
+        test: /\.worker\.js$/,
+        use: [{ loader: "worker-loader" }],
+      },
     ],
   },
   plugins: [
@@ -47,13 +62,14 @@ module.exports = {
       filename: "./index.html",
     }),
     new CleanWebpackPlugin({
-      // Simulate the removal of files
       dry: true,
-      // Write Logs to Console
       verbose: true,
-      // Automatically remove all unused webpack assets on rebuild
       cleanStaleWebpackAssets: true,
       protectWebpackAssets: false,
+    }),
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
     }),
   ],
 };

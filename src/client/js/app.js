@@ -44,7 +44,6 @@ async function handleSubmit(event) {
 }
 
 export async function postData(url, data) {
-  console.log(JSON.stringify(data));
   const res = await fetch(url, {
     method: "POST",
     credentials: "same-origin",
